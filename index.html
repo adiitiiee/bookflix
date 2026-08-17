@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bookflix</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- ====== INTRO SPLASH ====== -->
+  <div class="intro-splash" data-js-intro>
+    <button class="skip-intro" data-js-skip>Skip Intro</button>
+    <div class="book" data-js-book>
+      <div class="book-half left"></div>
+      <div class="book-half right"></div>
+      <div class="book-spine"></div>
+    </div>
+    <h1 class="intro-logo">BOOKFLIX</h1>
+  </div>
+<!-- ====== TOAST ====== -->
+<div class="toast" data-js-toast></div>
+
+  <!-- ====== NAVBAR ====== -->
+  <header class="navbar" data-js-navbar>
+    <div class="navbar-inner">
+      <h1 class="logo">BOOKFLIX</h1>
+
+      <nav class="nav-links">
+        <a href="#" data-js-nav="home">Home</a>
+        <div class="dropdown">
+          <button class="dropdown-btn" data-js-dropdown>Genres ▾</button>
+          <ul class="dropdown-menu">
+            <li><a href="#" data-js-genre="fantasy">Fantasy</a></li>
+            <li><a href="#" data-js-genre="romance">Romance</a></li>
+            <li><a href="#" data-js-genre="mystery">Mystery</a></li>
+          </ul>
+        </div>
+        <a href="#" data-js-nav="fantasy">Trending</a>
+        <a href="#" data-js-nav="romance">New &amp; Popular</a>
+        <a href="#" data-js-nav="shelf">My Shelf</a>
+      </nav>
+
+      <div class="nav-actions">
+        <input type="search" class="search-input" placeholder="Search books..." data-js-search>
+        <button class="icon-btn hamburger" data-js-hamburger aria-label="Menu">☰</button>
+        <button class="icon-btn" aria-label="Notifications">🔔</button>
+        <button class="avatar" data-js-profile aria-label="Profile">🧑</button>
+      </div>
+    </div>
+
+    <!-- mobile menu -->
+    <div class="mobile-menu" data-js-mobile-menu>
+      <a href="#" data-js-nav="home">Home</a>
+      <a href="#" data-js-genre="fantasy">Fantasy</a>
+      <a href="#" data-js-genre="romance">Romance</a>
+      <a href="#" data-js-genre="mystery">Mystery</a>
+      <a href="#" data-js-nav="shelf">My Shelf</a>
+    </div>
+  </header>
+
+  <!-- ====== HERO CAROUSEL ====== -->
+<section class="hero">
+  <div class="hero-slider" data-js-hero></div>
+  <div class="hero-dots" data-js-hero-dots></div>
+</section>
+
+
+  <!-- ====== GENRE ROWS ====== -->
+  <main class="content" id="rows"></main>
+
+  <!-- ====== MY SHELF ====== -->
+  <section id="shelf" class="row shelf-row">
+    <div class="row-header"><h3>My Shelf</h3></div>
+    <div class="row-track" data-js-shelf></div>
+    <p class="shelf-empty" data-js-shelf-empty>Your shelf is empty — click "+ Add to Shelf" on any book.</p>
+  </section>
+
+  <!-- ====== THEME TOGGLE ====== -->
+  <div class="theme-toggle">
+    <span>🌙</span>
+    <button class="toggle-switch" data-js-theme aria-label="Toggle theme">
+      <span class="toggle-knob"></span>
+    </button>
+    <span>☀️</span>
+  </div>
+
+  <!-- ====== MOBILE BOTTOM NAV ====== -->
+  <nav class="bottom-nav">
+    <button class="bottom-nav-item active">🏠<span>Home</span></button>
+    <button class="bottom-nav-item">🔍<span>Search</span></button>
+    <button class="bottom-nav-item">📚<span>My Shelf</span></button>
+    <button class="bottom-nav-item">👤<span>Profile</span></button>
+  </nav>
+
+  <!-- ====== PROFILE MODAL ====== -->
+  <div class="modal-overlay" data-js-profile-modal>
+    <div class="modal profile-modal">
+      <button class="modal-close" data-js-close-modal>✕</button>
+      <div class="avatar big">🧑</div>
+      <h2>Bookworm</h2>
+      <p class="muted">bookworm@bookflix.com</p>
+      <div class="profile-stats">
+        <div><strong data-js-stat-shelf>0</strong><span>On Shelf</span></div>
+        <div><strong data-js-stat-lib>0</strong><span>In Library</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ====== BOOK DETAIL MODAL ====== -->
+  <div class="modal-overlay" data-js-detail-modal>
+    <div class="modal detail-modal">
+      <button class="modal-close" data-js-close-modal>✕</button>
+      <div class="detail-cover" data-js-detail-cover></div>
+      <div class="detail-info">
+        <h2 data-js-detail-title></h2>
+        <p class="author" data-js-detail-author></p>
+        <p class="genre" data-js-detail-genre></p>
+        <p class="rating" data-js-detail-rating></p>
+        <p class="synopsis" data-js-detail-synopsis></p>
+        <button class="btn btn-primary" data-js-add-shelf>+ Add to Shelf</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
